@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+REPO=tyemcq
+NAME=http-rejector
+TAG=v0.0.1
+
+docker build . -t $NAME:$TAG
+docker tag $NAME:$TAG $REPO/$NAME:$TAG
+docker push $REPO/$NAME:$TAG
